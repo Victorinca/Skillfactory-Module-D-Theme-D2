@@ -1,6 +1,6 @@
 # Skillfactory Module D. Theme D2
 
-Completed homework for Skillfactory Course: 'Python Web Developer'. Module D - 'Backend-development in Python and Django'. Theme D1 - 'Models for Django'.
+Completed homework for Skillfactory Course: 'Python Web Developer'. Module D - 'Backend-development in Python and Django'. Theme D2 - 'Models for Django'.
 
 ## Репозиторий учебного проекта NewsPaper для курсов "Веб-разработчик на Python" и "Fullstack-разработчик на Python"
 ### [Модуль D. Тема D2 "Модели"](https://victorinca.github.io/Skillfactory-Module-D-Theme-D2/)
