@@ -1,0 +1,306 @@
+РАБОТА В КОНСОЛИ DJANGO SHELL с целью создания объектов моделей.
+
+1-ый способ создания объектов) создание объекта класса с последующим сохранением в базу данных
+Пример:
+	article1 = Post(postAuthor = author1, post_type = 'A', postTitle = 'Статья 1', postText = 'Текст 1. Текст текст текст.')
+	article1.save()
+2-ой способ создания объектов) применение менеджера модели - позволяет одновременно создать объект и отправить его в базу данных:
+	article1 = Post.objects.create(postAuthor = author1, post_type = 'A', postTitle = 'Статья 1', postText = 'Текст 1. Текст текст текст.')
+
+Чтобы запустить Django Shell из терминала, необходимо 
+1) Активировать/ войти в виртуальное окружение:
+на Windows: venv\scripts\activate
+на Linux: source venv/bin/activate 
+2) Перейти в директорию NewsPaper, где находится файл manage.py.
+cd NewsPaper
+3) Запустить Django Shell:
+python manage.py shell
+4) Появится Python-консоль
+	4.1) Для начала мы должны импортировать модели (ведь они находятся в отдельном модуле-приложении news):
+	from news.models import *
+	или так:
+	from news.models import Author, Category, Post, PostCategory, Comment
+
+	4.2) Затем уже можем выполнить команды, которые заданы в D2.7:
+
+***************************
+1) Создать двух пользователей (с помощью метода User.objects.create_user).
+    user1 = User.objects.create_user(username = 'User-1', first_name='Adam', email = 'user1@mail.com', password = 'user1-user1')
+    user2 = User.objects.create_user(username = 'User-2', first_name='Eva', email = 'user2@mail.com', password = 'user2-user2')
+	
+2) Создать два объекта модели Author, связанные с пользователями.
+    author1 = Author.objects.create(authorUser = user1)
+    author2 = Author.objects.create(authorUser = user2)
+
+3) Добавить 4 категории в модель Category.
+	category1 = Category.objects.create(categoryName = 'Business and Economics')
+	category2 = Category.objects.create(categoryName = 'Science and Technology')
+	category3 = Category.objects.create(categoryName = 'Education and Vacancies')
+	category4 = Category.objects.create(categoryName = 'Lifestyle and Health')
+	
+4) Добавить 2 статьи и 1 новость.
+   4.1) Cоздание текстов статей/ новостей:
+   Примечание:
+   В поле postText можно вставлять обычный текст или текст, отформатированный с помощью тегов HTML, в зависимости от ваших потребностей.
+   Django не ограничивает в этом отношении.
+   Если вы хотите вставить текст с тегами HTML, убедитесь, что правильно закодированы специальные символы, например, такие как <, >, &, чтобы они отображались корректно в HTML.
+   
+   Для выполняемого задания создадим и вставим текст, отформатированный с помощью тегов HTML.
+
+    text_article1 = """<p style="text-align: justify;">В мире информационных технологий постоянно появляются новые языки программирования, 
+						и выбрать тот, который будет наиболее полезным и востребованным в ближайшие годы, может быть сложной задачей.</p>"""
+    
+    text_article2 = """<p style="text-align: justify;"><strong>Здоровый образ жизни</strong> - это не просто отсутствие болезней, это состояние, 
+						когда наш организм функционирует на максимальной эффективности, обеспечивая нам удовлетворение от жизни и умение наслаждаться каждым днем. 
+						В этом контексте, привычки играют ключевую роль. Они помогают нам поддерживать поддерживать здоровье и энергию на протяжении всей жизни.</p>"""
+    
+    text_news1 = """<p style="text-align: justify;"><strong>В октябре 2023 года</strong> информационные технологии продолжают играть ключевую роль в обучении и экономике. 
+					С появлением новых инноваций и тенденций, мы видим, как эти технологии влияют на нашу жизнь и работу всё больше.</p>"""
+
+
+Начиная со следующего пункта, будут приведены возможные варианты команд для Django Shell.
+	4.2) Cоздание двух статей:
+	article1 = Post.objects.create(postAuthor = author1, post_type = Post.article, postTitle = 'Статья 1. Автор 1. Какой язык программирования изучать в 2023 году', postText = text_article1)
+	article2 = Post.objects.create(postAuthor = author2, post_type = Post.article, postTitle = 'Статья 2. Автор 2. Пять самых важных привычек для здорового образа жизни', postText = text_article2)
+	либо так:
+	article1 = Post.objects.create(postAuthor = author1, post_type = 'A', postTitle = 'Статья 1. Автор 1. Какой язык программирования изучать в 2023 году', postText = text_article1)
+	article2 = Post.objects.create(postAuthor = author2, post_type = 'A', postTitle = 'Статья 2. Автор 2. Пять самых важных привычек для здорового образа жизни', postText = text_article2)
+	либо так:
+	article1 = Post.objects.create(postAuthor = Author.objects.get(authorUser = User.objects.get(username = 'User-1')), post_type = 'A', postTitle = 'Статья 1. Автор 1. Какой язык программирования изучать в 2023 году', postText = text_article1)
+	article2 = Post.objects.create(postAuthor = Author.objects.get(authorUser = User.objects.get(username = 'User-2')), post_type = 'A', postTitle = 'Статья 2. Автор 2. Пять самых важных привычек для здорового образа жизни', postText = text_article2)
+	4.3) Cоздание одной новости:
+	news1 = Post.objects.create(postAuthor = author1, post_type = Post.news, postTitle = 'Новость 1. Автор 1. Информационные технологии преобразуют обучение и экономику в 2023 году', postText = text_news1)
+	либо так:
+	news1 = Post.objects.create(postAuthor = author1, post_type = 'N', postTitle = 'Новость 1. Автор 1. Информационные технологии преобразуют обучение и экономику в 2023 году', postText = text_news1)
+	либо так:
+	Post.objects.create(postAuthor = Author.objects.get(authorUser = User.objects.get(username = 'User-1')), post_type = 'N', postTitle = 'Новость 1. Автор 1. Информационные технологии преобразуют обучение и экономику в 2023 году', postText = text_news1)
+
+5) Присвоить им категории (как минимум в одной статье/новости должно быть не меньше 2 категорий).
+	Вариант 1:
+	PostCategory.objects.create(fromPost = article1, fromCategory = category2)
+	PostCategory.objects.create(fromPost = article1, fromCategory = category3)
+    PostCategory.objects.create(fromPost = article2, fromCategory = category4)
+    PostCategory.objects.create(fromPost = news1, fromCategory = category1)
+    PostCategory.objects.create(fromPost = news1, fromCategory = category2)
+    PostCategory.objects.create(fromPost = news1, fromCategory = category3)
+	
+	Или вариант 2 с помощью id:
+
+	Примечание: В базах данных нумерация обычно начинается с 1.
+	Это означает, что первая запись в таблице будет иметь идентификатор (id) равный 1, вторая запись - id равный 2 и т.д.
+	Однако, в некоторых случаях, можно настроить базу данных таким образом, чтобы нумерация начиналась с 0.
+	Это зависит от конкретной системы управления базами данных (СУБД) и ее настроек.
+	В Django, по умолчанию, нумерация идентификаторов в базе данных начинается с 1.
+	
+	Post.objects.get(id=1).postCats.add(Category.objects.get(id=2))
+	Post.objects.get(id=1).postCats.add(Category.objects.get(id=3))
+	Post.objects.get(id=2).postCats.add(Category.objects.get(id=4))
+	Post.objects.get(id=3).postCats.add(Category.objects.get(id=1))
+	Post.objects.get(id=3).postCats.add(Category.objects.get(id=2))
+	Post.objects.get(id=3).postCats.add(Category.objects.get(id=3))
+
+6) Создать как минимум 4 комментария к разным объектам модели Post (в каждом объекте должен быть как минимум один комментарий).
+	comment1 = Comment.objects.create(commentForPost = article1, commentUser = User.objects.get(username = 'User-2'), commentText = "Комментарий 1. К статье 1 автора 1 - 1-ый коммент. Автор коммента: пользователь 2 = автор 2. Отличный текст!")
+    comment2 = Comment.objects.create(commentForPost = article2, commentUser = User.objects.get(username = 'User-1'), commentText = "Комментарий 2. К статье 2 автора 2 - 1-ый коммент. Автор коммента: пользователь 1 = автор 1. Вопрос автору.")
+    comment3 = Comment.objects.create(commentForPost = article2, commentUser = User.objects.get(username = 'User-2'), commentText = "Комментарий 3. К статье 2 автора 2 - 2-ой коммент. Автор коммента: пользователь 2 = автор 2. Ответ автора.")
+    comment4 = Comment.objects.create(commentForPost = news1, commentUser = User.objects.get(username = 'User-2'), commentText = "Комментарий 4. К новости 1 автора 1 - 1-ый коммент. Автор коммента: пользователь 2 = автор 2. Текст мог быть получше.")
+
+7) Применяя функции like() и dislike() к статьям/новостям и комментариям, скорректировать рейтинги этих объектов.
+	Вариант 1:
+	article1.like()
+	article1.save()
+	comment1.like()
+	comment1.save()
+	Post.objects.get(postTitle = 'Статья 1. Автор 1. Какой язык программирования изучать в 2023 году').postRating
+	Comment.objects.get(commentForPost = article1).commentRating
+	
+	Добавим лайки/ дислайки ещё с помощью варианта 2:
+	Post.objects.get(id=1).like() # лайк статьи 1 автора 1
+	Post.objects.get(id=1).like()
+	Post.objects.get(id=1).like()
+	Post.objects.get(id=1).like()
+	Post.objects.get(id=1).postRating
+	5
+	Post.objects.get(id=2).like() # лайк статьи 2 автора 2
+	Post.objects.get(id=2).like()
+	Post.objects.get(id=2).like()
+	Post.objects.get(id=2).dislike() # дислайк статьи 2 автора 2
+	Post.objects.get(id=2).postRating
+	2
+	Post.objects.get(id=3).like() # лайк новости 1 автора 1
+	Post.objects.get(id=3).dislike() # дислайк новости 1 автора 1
+	Post.objects.get(id=3).dislike()
+	Post.objects.get(id=3).postRating
+	-1
+	
+	# Лайк коммента №1. К статье 1 автора 1 - 1-ый коммент. Автор коммента: пользователь 2 = автор 2.
+	Comment.objects.get(id=1).like() 
+	Comment.objects.get(id=1).like()
+	Comment.objects.get(id=1).like()
+	Comment.objects.get(id=1).commentRating
+	4
+	
+	# Лайк коммента №2. К статье 2 автора 2 - 1-ый коммент. Автор коммента: пользователь 1 = автор 1.
+	Comment.objects.get(id=2).like()
+	Comment.objects.get(id=2).commentRating
+	1
+	
+	# Лайк коммента №3. К статье 2 автора 2 - 2-ой коммент. Автор коммента: пользователь 2 = автор 2.
+	Comment.objects.get(id=3).like()
+	Comment.objects.get(id=3).like()
+	Comment.objects.get(id=3).like()
+	Comment.objects.get(id=3).like()
+	Comment.objects.get(id=3).like()
+	Comment.objects.get(id=3).dislike()
+	Comment.objects.get(id=3).commentRating
+	4
+	
+	# Лайк коммента №4. К новости 1 автора 1 - 1-ый коммент. Автор коммента: пользователь 2 = автор 2.
+	Comment.objects.get(id=4).like() 
+	Comment.objects.get(id=4).dislike()
+	Comment.objects.get(id=4).dislike()
+	Comment.objects.get(id=4).commentRating
+	-1
+
+	Можно ещё использовать вариант 3 - рандомные лайки/ дислайки:
+	# для проставления лайков/ дислайков
+	import random
+	
+	# список всех объектов, которые можно лайкать
+    list_for_like = [article1,
+                    article2,
+                    news1,
+                    comment1,
+                    comment2,
+                    comment3,
+                    comment4]
+
+    # 50 рандомных лайков/ дислайков
+    for i in range(50):
+        random_post = random.choice(list_for_like)
+        if i % 3:
+            random_post.dislike() # кратные 3
+        else:
+            random_post.like() # не кратные 3
+
+8) Обновить рейтинги пользователей.
+	вариант 1:
+	Author.objects.get(id=1).update_rating() # подсчет и обновление рейтинга автора 1
+	Author.objects.get(id=2).update_rating() # подсчет и обновление рейтинга автора 2
+	или вариант 2:
+	Author.objects.get(authorUser=User.objects.get(username='User-1')).update_rating()
+	Author.objects.get(authorUser=User.objects.get(username='User-2')).update_rating()
+	
+	Author.objects.get(id=1).authorRating
+	или так:
+	a1 = Author.objects.get(authorUser=User.objects.get(username='User-1'))
+	a1.authorRating
+	16
+	Как образовался: (5*3 + (-1)*3) + 1 + (4-1) = (15 -3) + 1 + 3 = 16
+	
+	Author.objects.get(id=2).authorRating
+	или так:
+	a2 = Author.objects.get(authorUser=User.objects.get(username='User-2'))
+	a2.authorRating
+	18
+	Как образовался: 2*3 + (4 + 4 +-1) + (1 + 4) = 6 + 7 + 5 = 18
+	
+9) Вывести username и рейтинг лучшего пользователя (применяя сортировку и возвращая поля первого объекта).
+
+    Лучший автор - вариант 1:
+    best_author = Author.objects.all().order_by('-authorRating')[0]
+	
+	print('Username лучшего автора:', best_author.authorUser.username, 'рейтинг:', best_author.authorRating)
+	ответ:
+	Username лучшего автора: User-2 рейтинг: 18
+	
+	Лучший автор - вариант 2:
+	best_author_2 = Author.objects.order_by('-authorRating').first()
+	
+	print('Username лучшего автора:', best_author_2.authorUser.username, 'рейтинг:', best_author_2.authorRating)
+	ответ:
+	Username лучшего автора: User-2 рейтинг: 18
+	
+	Или вариант 3, но не очень красиво:
+ 	best_author_3 = Author.objects.all().order_by('-authorRating').values('authorUser', 'authorRating')[0]
+	
+	print('Лучший автор (username, рейтинг):', best_author_3)
+	ответ:
+	Лучший автор (username, рейтинг): {'authorUser': 2, 'authorRating': 18}
+	
+10) Вывести дату добавления, username автора, рейтинг, заголовок и превью лучшей статьи, основываясь на лайках/дислайках к этой статье.
+
+    Лучшая статья - вариант 1:
+    best_article = Post.objects.filter(post_type = Post.article).order_by('-postRating')[0]
+	
+    print('Лучшая статья на основании лайков и дислайков к этой статье:')
+	ответ:
+	Лучшая статья на основании лайков и дислайков к этой статье:
+	
+    print('Дата создания:', best_article.postCreated)
+	ответ:
+	Дата создания: 2023-10-13 21:47:22.027126+00:00
+	
+    print('Username автора:', best_article.postAuthor.authorUser.username)
+	ответ:
+	Username автора: User-1
+	
+    print('Рейтинг статьи:', best_article.postRating)
+	ответ:
+	Рейтинг статьи: 5
+
+    print('Заголовок статьи:', best_article.postTitle)
+	ответ:
+	Заголовок статьи: Статья 1. Автор 1. Какой язык программирования изучать в 2023 году
+	
+    print('Превью:', best_article.preview())
+	ответ (без использования функции удаления тегов в методе preview()):
+	Превью: <p style="text-align: justify;">В мире информационных технологий постоянно появляются новые языки программирования, и выбрат...
+	ответ (с использованием функции strip_tags для удаления тегов в методе preview()):
+	Превью: В мире информационных технологий постоянно появляются новые языки программирования, и выбрать тот, который будет наиболее по...
+	
+	Лучшая статья - более красивый вариант 2:
+	best_article_2 = Post.objects.filter(post_type = 'A').order_by('-postRating').first()
+	
+	print('Лучшая статья добавлена:', best_article_2.postCreated, '\nUsername автора:', best_article_2.postAuthor.authorUser.username,
+	'\nРейтинг статьи:', best_article_2.postRating, '\nЗаголовок статьи:', best_article_2.postTitle, '\nПревью:', best_article_2.preview())
+	
+	ответ:
+	Лучшая статья добавлена: 2023-10-13 21:47:22.027126+00:00
+	Username автора: User-1
+	Рейтинг статьи: 5
+	Заголовок статьи: Статья 1. Автор 1. Какой язык программирования изучать в 2023 году
+	Превью: В мире информационных технологий постоянно появляются новые языки программирования, и выбрать тот, который будет наиболее по...
+
+11) Вывести все комментарии (дата, пользователь, рейтинг, текст) к этой статье.
+
+Комментариев может быть несколько, поэтому нужен универсальный код. 
+Делаем цикл - печать комментариев к лучшей статье.
+Вариант 1:
+for best_article_comment in Comment.objects.filter(commentForPost = best_article):
+    print('Комментарии к лучшей статье:')
+    print('Дата комментария:', comment.commentCreated)
+    print('Автор комментария:', comment.commentUser.username)
+    print('Рейтинг комментария:', comment.commentRating)
+    print('Текст комментария:', comment.commentText)
+    print('')
+
+Вариант 2:
+for best_article_comment in Comment.objects.filter(commentForPost = best_article):
+    print('Комментарии к лучшей статье:', '\nДата комментария:', best_article_comment.commentCreated, '\nАвтор комментария:', best_article_comment.commentUser.username, 
+	'\nРейтинг комментария:', best_article_comment.commentRating, '\nТекст комментария:', best_article_comment.commentText, '\n ')
+
+ответ:
+	Комментарии к лучшей статье:
+	Дата комментария: 2023-10-13 22:05:57.178720+00:00
+	Автор комментария: User-2
+	Рейтинг комментария: 4
+	Текст комментария: Комментарий 1. К статье 1 автора 1 - 1-ый коммент. Автор коммента: пользователь 2 = автор 2. Отличный текст!
+
+12) Выходим из Django Shell
+exit()
+
+***************************
+
+Полезные команды:
+python manage.py help - посмотреть список доступных команд для Django

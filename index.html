@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Homework for Skillfactory. Module D. Theme D2</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			font-size: 1rem;
+			line-height: 2.2rem;
+			background-color: #f4f3f5;
+			margin: 0;
+			padding: 0;
+		}
+		.logo {
+			margin: 20px 2% 20px 12%;
+            padding: 2%;
+			float: left;
+		}
+		.header {
+			text-align: right;
+			margin: 0 12% 0 2%;
+            padding: 2%;
+		}
+		h1 {
+			color: #0a3055;
+			text-align: right;
+			line-height: 2.5rem;
+			margin-top: 8px;
+		}
+		.header-2 {
+			text-align: center;
+			margin: 0 12%;
+            padding: 10px;
+		}
+		.main-content {
+            background-color: #ffffff;
+            border-radius: 10px;
+            margin: 0 12% 20px;
+            padding: 2%;
+        }
+		h2 {
+			color: #454545;
+			text-align: center;
+			line-height: 2rem;
+			margin-top: 2%;
+			margin-bottom: 1%;
+			padding: 1%;
+		}
+		.hr-dashed {
+			margin: 1% 0;
+			padding: 0;
+			height: 8px;
+			border: none;
+			background: linear-gradient(to right, transparent 80%, #fff 80%),
+						linear-gradient(to right, #b5e916, #fff);
+			background-size: 72px 8px, 100% 8px;
+		}
+		h3 {
+			color: #646464;
+			text-align: left;
+			margin-top: 3%;
+			margin-bottom: 1%;
+			padding: 1% 0;
+		}
+		.hr-solid {
+			text-align: left;
+			margin: 1% 0;
+			padding: 0;	
+			border-top: 3px solid #00b43f;
+			width: 50%;
+		}
+		h4 {
+			color: #313131;
+			text-align: left;
+			margin-top: 1%;
+			margin-bottom: 1%;
+			padding: 1% 0;
+			font-size: 112%;
+		}
+		.content {
+			text-align: left;
+			line-height: 160%;
+		}
+		.content a, .content li {
+			text-decoration: none;
+			color: #6ac207;
+		}
+		.content a:hover {
+			text-decoration: none;
+			color: #5dab06;
+		}
+		.hr-silver {
+			text-align: center;
+			margin: 2% auto 40px;
+			padding: 0;	
+			border-top: 1px solid #ddd;
+			width: 90%;
+		}
+		.block {
+            width: 84%;
+			margin: 0 auto;
+            padding: 2%;
+        }
+		.gray-block {
+            background-color: #f5f5f5;
+            margin: 4% 8%;
+            padding: 2% 3% 3%;
+        }
+		.text {
+			color: #313131;
+			text-align: center;
+			font-size: 120%;
+			line-height: 140%;
+			margin-top: 20px;
+		}
+		.text-green {
+			color: #6ac207;
+		}
+		pre {
+			text-align: left;
+			font-size: 1.1rem;
+			line-height: 2rem;
+			background: #F8F8F8;
+			overflow: auto;
+			width: auto;
+			border: solid #D1D9D7;
+			border-width: .1em; padding: .2em .6em;
+			margin: 0; 
+			line-height: 125%;
+		}
+
+		.custom-btn {
+			display: inline-block;
+			margin-top: 20px;
+			padding: 10px 20px;
+			text-decoration: none;
+			border-radius: 5px;
+			font-weight: 600;
+			background-color: #ff0000;
+			color: #ffffff;
+			border: none;
+			font-size: 100%;
+			cursor: pointer;
+		}
+		.custom-btn:hover {
+			background-color: #ff5555;
+		}
+
+		.thanks-block {
+            background-color: #ebfff0;
+            margin: 3% 8%;
+            padding: 1% 3%;
+        }
+		
+		.block-ym-payment {
+			margin: 20px auto;
+		}
+		.custom-btn-ym {
+			background-color: #8b3ffd;
+			color: #ffffff;
+		}
+		.custom-btn-ym:hover {
+			background-color: #7636D7;
+		}
+
+		.block-qiwi-payment {
+			margin: 20px auto;
+		}
+		.custom-btn-qiwi {
+			background-color: #ff8c00;
+			color: #ffffff;
+		}
+		.custom-btn-qiwi:hover {
+			background-color: #f97b04;
+		}
+		
+		.block-wm-payment {
+			margin: 20px auto;
+		}
+		.custom-btn-wm {
+			background-color: #3c8dbc;
+			color: #ffffff;
+		}
+		.custom-btn-wm:hover {
+			background-color: #367fa9;
+		}
+		
+		.block-pf-payment {
+			margin: 20px auto;
+		}
+		.custom-btn-pf {
+			background-color: #F01010;
+			color: #ffffff;
+		}
+		.custom-btn-pf:hover {
+			background-color: #db1313;
+		}
+		
+		.block-sf {
+			margin: 20px auto;
+		}
+		.custom-btn-sf {
+			background-color: #B5E916;
+			color: #1B1C17;
+		}
+		.custom-btn-sf:hover {
+			background-color: #9CC813;
+		}
+
+		.footer {
+			text-align: center;
+			margin-bottom: 40px;
+			padding: 8px 56px;
+		}
+		
+		#sticky-block, #sticky-block a {
+			position: fixed;
+			bottom: 16px;
+			right: 16px;
+			width: 40px;
+			height: 20px;
+			background-color: #B5E916;
+			font-size: 100%;
+			line-height: 100%;
+			text-decoration: none;
+			padding: 8px 4px;
+			text-align: center;
+		}
+		#sticky-block a:hover {
+			background-color: #9CC813;
+			height: 28px;
+		}
+		@media screen and (max-width: 768px) {
+			body {
+				font-size: 1.2rem;
+				text-align: left;
+			}
+			pre {
+				font-size: 1.2rem;
+			}
+			.text {
+				font-size: 100%;
+				line-height: 140%;
+			}
+			.main-content {
+				border-radius: 10px;
+				margin: 0 4%;
+				padding: 1.5%;
+			}
+			.gray-block {
+				margin: 3% 4%;
+				padding: 5%;
+			}
+		}
+	</style>	
+</head>
+<body>
+	<a name="top"></a>
+	<div class="logo">
+		<svg width="200" height="17" viewBox="0 0 938 79" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M30.786 29.391l18.405 2.008c19.632 2.12 29.783 9.928 29.783 23.09 0 15.282-14.055 23.87-39.71 23.87C12.94 78.36 0 69.772 0 52.37h17.959c0 7.586 7.808 11.824 21.751 11.824 14.055 0 20.301-2.566 20.301-9.146 0-4.908-4.462-7.028-12.493-7.92L29.894 45.23C11.489 43.223 2.231 35.749 2.231 22.92 2.231 9.202 17.067.279 38.149.279c23.313 0 37.144 8.924 37.144 23.647H57.78c-.78-6.47-7.138-9.815-19.297-9.815-12.158 0-17.735 2.9-17.735 8.254 0 4.684 3.569 6.358 10.038 7.027zm520.806 33.575c-15.058 0-23.871-8.7-23.871-23.647s8.813-23.648 23.871-23.648c11.712 0 18.628 4.573 21.082 13.609h19.186C589.963 11.99 573.566.278 551.592.278c-26.214 0-43.279 15.393-43.279 39.04 0 23.76 16.954 39.042 43.279 39.042 22.866 0 38.818-12.159 40.491-30.787h-19.186c-1.115 9.705-8.923 15.393-21.305 15.393zm-104.956-16.62l13.712-35.917h.558l13.651 35.917h-27.921zm-.566-44.172l-28.333 74.29h17.402l6.174-16.175h38.543l6.147 16.174H505.3L476.856 2.174H446.07zm-278.083 0h-19.632l-28.89 29.337h-8.7V2.174H93.14v74.29h17.625V45.565h8.7l28.555 30.897h22.868L134.031 36.68l33.956-34.506zm49.749 0h17.625v60.012h40.156v14.277h-57.781V2.174zm87.229 0h-17.624v74.29h57.78V62.185h-40.156V2.174zm69.604 14.278h44.395V2.174h-62.019v74.29h17.624v-27.33h36.81V34.858h-36.81V16.452zM198.774 76.463H181.15V2.174h17.624v74.29zM699.836 2.174h44.968v17.067h-44.968V2.174zm0 17.067v40.156h-18.629V19.24h18.629zm44.968 0h18.628v40.156h-18.628V19.24zm76.52 18.962h-23.983V16.452h23.983c8.254 0 13.385 4.239 13.385 10.931 0 6.693-5.131 10.82-13.385 10.82zm31.679-10.82c0-15.504-12.048-25.209-31.679-25.209h-41.718v74.29h17.735V52.48h17.397l19.971 23.982h21.528l-22.749-27.32c12.323-2.963 19.515-10.729 19.515-21.76zm66.146-25.209l-21.082 33.017-21.082-33.017h-20.524l31.902 48.857v25.432h17.624V51.031L938 2.174h-18.851zM625.881 16.452h-27.886V2.174h73.508v14.278h-27.998v60.011h-17.624V16.452zm118.923 60.011h-44.968V59.397h44.968v17.066z" fill="#000"></path></svg>
+	</div>
+	<div class="header">
+		<h1>Python Web Developer Course</h1>
+	</div>
+	<div class="header-2">
+		<p class="text-green">Module D - 'Backend-development in Python and Django'</p>
+	</div>
+	<div class="main-content">
+		<div class="text">
+
+			<h2>Theme D2 - 'Models for Django'</h2>
+			<hr class="hr-dashed">
+			<p>Completed homework for <b>Skillfactory Course</b>.</p>
+			
+			<div class="block">
+			<h3>Итоговое задание по теме 2 - 'Модели': проект NewsPaper</h3>
+			<hr class="hr-solid">
+			
+				<p style="text-align: justify;"><strong>Создать приложение новостного портала NewsPaper с помощью Python and Django</strong>, чтобы можно было: 1) смотреть новости 2) читать статьи.</p>
+				<h4>Содержание</h4>
+					<ol class="content">
+						<li><a href="#s1">Что должно быть в Newspaper</a></li>
+						<li><a href="#s2">Поля моделей</a></li>
+						<li><a href="#s3">Методы и свойства моделей</a></li>
+						<li><a href="#s4">Создание проекта - новостного портала Newspaper на Django</a></li>
+						<li><a href="#s5">Загрузка и получение данных из моделей. Список команд, запускаемых в Django shell</a></li>
+						<li><a href="#s6">Поддержать, отблагодарить автора</a></li>
+						<li><a href="#s7">Приложение</a></li>
+					</ol>
+				<hr class="hr-silver">
+				
+				<p id="s1" style="text-align: center;"><strong>ЧТО ДОЛЖНО БЫТЬ В NEWSPAPER:</strong></p>
+				<ol>
+				<li style="text-align: justify;">Каждая статья/ новость может относиться к одной или нескольким категориям.</li>
+				<li style="text-align: justify;">Зарегистрированные пользователи должны иметь возможность сами писать статьи/ новости на новостной портал.</li>
+				<li style="text-align: justify;">Под каждой новостью/статьёй любой пользователь (необязательно автор) может оставлять комментарии.</li>
+				</ol>
+				<p style="text-align: justify;"><strong>Итоговое задание по теме D2 "Модели" заключается <span style="background-color: #B5E916;">в создании</span> каркаса и базы этого приложения (пока что только <span style="background-color: #B5E916;">моделей</span>).</strong></p>
+				<p style="text-align: center;"><strong>Какие модели должны быть в NewsPaper?</strong></p>
+				<ol>
+				<li style="text-align: justify;">Модель <strong>Author</strong>, содержащая объекты всех авторов.</li>
+				<li style="text-align: justify;">Модель <strong>Category</strong> - категории новостей/статей &mdash; темы, которые они отражают (бизнес, технологии, образование, образ жизни и т.д.).</li>
+				<li style="text-align: justify;">Модель <strong>Post</strong> - статьи и новости, которые создают пользователи. Каждый объект может иметь одну или несколько категорий.</li>
+				<li style="text-align: justify;">Модель <strong>PostCategory</strong> - промежуточная модель для связи &laquo;многие ко многим&raquo;.</li>
+				<li style="text-align: justify;">Модель <strong>Comment</strong> - хранение комментариев, оставляемых под каждой новостью/статьёй.</li>
+				</ol>
+			</div>
+			
+			<div id="s2" class="gray-block">
+				<h4>Поля моделей</h4>
+				<p style="text-align: justify;"><strong>1) Поля модели Author:</strong><br />1.1) cвязь &laquo;один к одному&raquo; с встроенной моделью пользователей User;<br />1.2) рейтинг пользователя (ниже будет дано описание того, как этот рейтинг можно посчитать).</p>
+				<pre>
+class Author(models.Model):
+    authorUser = models.OneToOneField(User, on_delete=models.CASCADE)
+    authorRating = models.SmallIntegerField(default=0)
+				</pre>
+				<p style="text-align: justify;"><strong>2) Поля модели Category:</strong><br />2.1) название категории - поле должно быть уникальным (в определении поля необходимо написать параметр unique = True).</p>
+				<pre>
+class Category(models.Model):
+    categoryName = models.CharField(max_length=64, unique=True)
+				</pre>
+				<p style="text-align: justify;"><strong>3) Поля модели Post:</strong><br />3.1) связь &laquo;один ко многим&raquo; с моделью Author;<br />3.2) поле с выбором &mdash; &laquo;статья&raquo; или &laquo;новость&raquo;;<br />3.3) автоматически добавляемая дата и время создания;<br />3.4) связь &laquo;многие ко многим&raquo; с моделью Category (с дополнительной моделью PostCategory);<br />3.5) заголовок статьи/новости;<br />3.6) текст статьи/новости;<br />3.7) рейтинг статьи/новости.</p>
+				<pre>
+class Post(models.Model):
+    article = 'A'
+    news = 'N'
+
+    POST_TYPE = [
+        (article, "Статья"),
+        (news, "Новость")
+    ]
+
+    postAuthor = models.ForeignKey(Author, on_delete=models.CASCADE)
+    post_type = models.CharField(max_length=1, choices=POST_TYPE, default=article)
+    postCreated = models.DateTimeField(auto_now_add=True)
+    postCats = models.ManyToManyField(Category, through='PostCategory')
+    postTitle = models.CharField(max_length=128)
+    postText = models.TextField()
+    postRating = models.SmallIntegerField(default=0)
+				</pre>
+				<p style="text-align: justify;"><strong>4) Поля модели PostCategory:</strong><br />4.1) связь &laquo;один ко многим&raquo; с моделью Post;<br />4.2) связь &laquo;один ко многим&raquo; с моделью Category.</p>
+				<pre>
+class PostCategory(models.Model):
+    fromPost = models.ForeignKey(Post, on_delete=models.CASCADE)
+    fromCategory = models.ForeignKey(Category, on_delete=models.CASCADE)
+				</pre>
+				<p style="text-align: justify;"><strong>5) Поля модели Comment:</strong><br />5.1) связь &laquo;один ко многим&raquo; с моделью Post;<br />5.2) связь &laquo;один ко многим&raquo; со встроенной моделью User (комментарии может оставить любой пользователь, необязательно автор);<br />5.3) текст комментария;<br />5.4) дата и время создания комментария;<br />5.5) рейтинг комментария.</p>
+				<pre>
+class Comment(models.Model):
+    commentForPost = models.ForeignKey(Post, on_delete=models.CASCADE)
+    commentUser = models.ForeignKey(User, on_delete=models.CASCADE)
+    commentText = models.TextField()
+    commentCreated = models.DateTimeField(auto_now_add=True)
+    commentRating = models.SmallIntegerField(default=0)
+				</pre>
+			</div>
+
+			<div id="s3" class="gray-block">
+				<h4>Методы и свойства моделей</h4>
+				<p style="text-align: justify;"><strong>Описанные выше пять моделей должны реализовать следующие методы:</strong></p>
+				<p style="text-align: justify;">1) Методы <span style="background-color: #ccffff;">like()</span> и <span style="background-color: #ccffff;">dislike()</span> в моделях 5)Comment и 3)Post, которые увеличивают/уменьшают рейтинг на единицу.</p>
+				<p style="text-align: justify;">Рейтинг для postRating:</p>
+				<pre>
+    def like(self):
+        self.postRating += 1
+        self.save()
+
+    def dislike(self):
+        self.postRating -= 1
+        self.save()
+				</pre>
+				<p style="text-align: justify;">Рейтинг для commentRating:</p>
+				<pre>
+    def like(self):
+        self.commentRating += 1
+        self.save()
+
+    def dislike(self):
+        self.commentRating -= 1
+        self.save()
+				</pre>
+				<p style="text-align: justify;">2) Метод <span style="background-color: #ccffff;">preview()</span> модели 3)Post, который возвращает начало статьи (предварительный просмотр) длиной 124 символа и добавляет многоточие в конце.</p>
+				<p style="text-align: justify;"><em>Примечание</em>: в Python индексы начинаются с 0, поэтому первый элемент имеет индекс 0, второй - индекс 1 и т.д.<br />Срез определяется с помощью квадратных скобок [ ], берутся все элементы из последовательности начиная с указанного и до указанного индекса (не включая его).</p>
+				<p style="text-align: justify;"><strong>1-ое решение</strong> используем конкатенацию (объединение) строк с помощью оператора "+":</p>
+				<pre>
+    def preview(self):
+        return self.postText[:124] + '...'
+				</pre>
+				<p style="text-align: justify;"><strong>2-ое решение</strong> используем форматирование строки с помощью f-строки:</p>
+				<pre>
+    def preview(self):
+        return f"{self.postText[:124]}..."
+				</pre>
+				<p style="text-align: justify;"><strong>3-е решение</strong> используем условное выражение для определения длины предварительного просмотра.<br />Если длина текста postText превышает 124 символа, то preview_length будет равно 124, иначе оно будет равно длине postText. <br />Затем возвращается начало текста postText длиной preview_length, с добавлением многоточия в конце.</p>				
+				<pre>
+    def preview(self):
+        preview_length = 124 if len(self.postText) > 124 else len(self.postText)
+        return self.postText[:preview_length] + '...'
+				</pre>			
+				<p style="text-align: justify;"><strong>4-е решение</strong> используем условное выражение для проверки длины текста.<br />Если длина текста postText превышает 124 символа, то возвращается начало текста postText длиной 124 символа, с добавлением многоточия в конце. <br />В противном случае, возвращается весь текст postText без изменений.</p>
+				<pre>
+    def preview(self):
+        return self.postText[:124] + '...' if len(self.postText) > 124 else self.postText
+				</pre>
+				<p style="text-align: justify;"><strong>5-е решение</strong> опять же используем условное выражение для проверки длины текста.<br />Значение длины текста устанавливаем в переменной, которая определяет максимальную длину предварительного просмотра. <br />Если длина текста postText превышает длину предварительного просмотра, <br />то postText урезается до длины предварительного просмотра и добавляется в конце многоточие.<br />В ином случае, возвращается весь текст postText без изменений.</p>				
+				<pre>
+    def preview(self):
+        preview_length = 124
+        return self.postText[:preview_length] + '...' if len(self.postText) > preview_length else self.postText
+				</pre>
+				<p style="text-align: justify;"><strong>6-е решение</strong> используем условный оператор if-else для проверки длины текста self.postText.<br />Если длина текста превышает preview_length, то возвращается начало текста длиной preview_length с добавлением многоточия в конце.<br />В противном случае, возвращается весь текст postText без изменений.</p>
+				<pre>
+    def preview(self):
+        preview_length = 124
+        if len(self.postText) > preview_length:
+            return self.postText[:preview_length] + '...'
+        else:
+            return self.postText
+				</pre>
+				<p style="text-align: justify;"><strong>7-е решение</strong> используем условный оператор if-else для проверки длины текста self.postText.<br />Если длина текста меньше или равна preview_length, возвращается весь текст статьи.<br />В ином случае, возвращается начало текста указанной длины и добавляется многоточие в конце.</p>
+				<pre>
+    def preview(self):
+        preview_length = 124
+        ellipsis = '...'
+        if len(self.postText) <= preview_length:
+            return self.postText
+        else:
+            return self.postText[:preview_length] + ellipsis
+				</pre>
+				<p style="text-align: justify;"><strong>Среди этих семи решений наиболее элегантными и лаконичными являются решения 5 и 2.</strong><br /><strong>Решение 5</strong> - это сочетание решений 3 и 4, оно урезает строку только при необходимости.<br />Оно удобно, поскольку указание длины предварительного просмотра использовано один раз, и элегантно, т.к. объединяет логику усечения и многоточия с использованием тернарного (условного) оператора, задающего условие в одной строке кода.<br /><strong>Решение 2</strong> самое лаконичное - оно использует f-строку для достижения желаемого результата в одной строке кода.</p>
+				<p style="text-align: justify;">Исходя из этого, <strong>берем вариант 2 и немного модифицируем его.</strong><br />Поскольку в дальнейшем при выполнении задания мы будем добавлять в базу данных текст, отформатированный с помощью тегов HTML, нам нужно чтобы в предварительный просмотр выводился текст без HTML-тегов.<br />Для этого можно использовать функцию strip_tags из модуля django.utils.html. <br />Эта функция удаляет все HTML-теги из строки.<br />Изменим код варианта 2, чтобы использовать эту функцию:</p>
+				<pre>
+from django.utils.html import strip_tags # для удаления всех HTML-тегов из строки - эта строка добавляется в начало файла models.py перед строкой # Create your models here.
+				</pre>
+				<p style="text-align: justify;"><strong>Модифицированный вариант решения 2</strong> с функцией strip_tags из модуля django.utils.html.<br />Применяем функцию strip_tags к self.postText, чтобы удалить все HTML-теги из текста:</p>
+				<pre>
+    def preview(self):
+            text_without_tags = strip_tags(self.postText)[:124]
+            return f"{text_without_tags}..."
+				</pre>
+				<p style="text-align: justify;">3) Метод <span style="background-color: #ccffff;">update_rating()</span> модели 1)Author, который обновляет рейтинг пользователя, переданный в аргумент этого метода.<br />Он состоит из следующего:<br />3.1) суммарный рейтинг каждой статьи автора умножается на 3;<br />3.2) суммарный рейтинг всех комментариев автора;<br />3.3) суммарный рейтинг всех комментариев к статьям автора.</p>
+				<pre>
+    def update_rating(self):
+
+# 1) суммарный рейтинг каждой статьи postRating автора postAuthor умножается на 3
+# с помощью post_set.all() - получим все связанные с автором посты в модели Post, 
+# и с помощью aggregate получаем все значения поля рейтинг и суммируем их
+        sumPR = self.post_set.all().aggregate(sumPostRating=Sum('postRating'))
+# создадим промежуточную переменную
+        pRate = 0
+        pRate += sumPR.get('sumPostRating')
+
+# 2) суммарный рейтинг всех комментариев commentRating автора authorUser
+        sumAuthorCR = self.authorUser.comment_set.all().aggregate(sumAuthorComRating=Sum('commentRating'))
+        authorCRate = 0
+        authorCRate += sumAuthorCR.get('sumAuthorComRating')
+
+# 3) суммарный рейтинг всех комментариев commentRating к статьям автора postAuthor
+        sumPostCR = Comment.objects.filter(commentForPost__postAuthor=self).values('commentRating').aggregate(sumPostComRating=Sum('commentRating'))
+        postCRate = 0
+        postCRate += sumPostCR.get('sumPostComRating')
+
+# print('pRate =', pRate * 3, 'authorCRate =', authorCRate, 'postCRate =', postCRate)
+
+        self.authorRating = pRate * 3 + authorCRate + postCRate
+        self.save()
+				</pre>
+				<p style="text-align: justify;"><strong>Далее собираем все модели в единый скрипт (код) в проект NewsPaper, в котором сначала создано приложение news.</strong> <br />В приложении news в файл models.py вставляем этот код.</p>
+			</div>
+
+			<div id="s4" class="gray-block">
+				<h4>СОЗДАНИЕ ПРОЕКТА - НОВОСТНОГО ПОРТАЛА NEWSPAPER НА DJANGO</h4>
+				<p style="text-align: justify;">Создаем для проекта папку: </p>
+				<pre>
+NewsPaper_Django_Project
+				</pre>
+				<p style="text-align: justify;">Список команд в терминале:<br />1) В корне той папки, в которой хотим создать виртуальное окружение:</p>
+				<pre>
+на Windows
+python -m venv venv
+или
+на Linux
+apt-get install -y python3-venv
+python3 -m venv venv
+				</pre>
+				<p style="text-align: justify;">2) Активируем и заходим в виртуальное окружение:</p>
+				<pre>
+на Windows:
+venv\scripts\activate
+или
+на Linux:
+source venv/bin/activate
+				</pre>
+				<p style="text-align: justify;">Перейдя в виртуальное окружение, теперь работаем с изолированной версией Python, которая находится у нас в папке venv.</p>
+				<p style="text-align: justify;">3) Установим Django с активированной средой (в виртуальную среду):</p>
+				<pre>
+pip3 install django
+				</pre>
+				<p style="text-align: justify;">Мы можем работать с Django только, пока мы находимся в этой среде. <br />Если мы забудем её активировать перед тем, как приступить к работе с проектом, менеджер Django напомнит об этом.</p>
+				<p style="text-align: justify;">4) Запускаем команду создания пустого проекта, т.е. дадим команду только что установленному модулю django-admin создать новый проект с именем NewsPaper:</p>
+				<pre>
+django-admin startproject NewsPaper
+				</pre>
+				<p style="text-align: justify;">В директории </p>
+				<pre>
+NewsPaper_Django_Project/NewsPaper/NewsPaper
+				</pre> 
+				<p style="text-align: justify;">при дальнейших работах можно редактировать файлы:<br />- settings.py - настройки Django для всего проекта;<br />- urls.py - конфигурация URL-адресов для проекта - здесь указываем ссылки на создаваемом сайте. Список `urlpatterns` направляет URL-адреса в представления.<br />Остальные 3 файла - системные, не трогаем: __init__py, asgi.py и wsgi.py</p>
+				<p style="text-align: justify;">5) Переходим в папку NewsPaper:</p>
+				<pre>
+cd NewsPaper
+				</pre>
+				<p style="text-align: justify;">6) Создадим новое приложение (раздел) news, используя команду startapp из скрипта manage.py:</p>
+				<pre>
+на Windows
+python manage.py startapp news
+или
+на Linux
+python3 manage.py startapp news
+				</pre>
+				<p style="text-align: justify;">Посмотрим содержание директории news. В папке </p>
+				<pre>
+NewsPaper_Django_Project\NewsPaper\news\migrations\ 
+				</pre>
+				<p style="text-align: justify;">- будут храниться логи миграции в БД.<br />Системные файлы - не трогаем:<br />- __init__.py<br />- apps.py - позволяет определить Django, что это за приложение (в большинстве случаев не редактируем этот файл).<br />Файлы для редактирования:<br />- admin.py - наша админ-панель, в которую можно занести модели, с котрыми нужно взаимодеййствовать через админ-панель;<br />- models.py - позже опишем структуру (таблицы) для БД;<br />- tests.py - опишем тесты для проекта;<br />- views.py - основной - взаимодействие пользовател с БД, и наоборот.</p>
+				<p style="text-align: justify;">Чтобы приложение news стало частью проекта NewsPaper, нужно добавить его в установленные приложения.<br />Перейдём в файл NewsPaper/settings.py и найдём там список INSTALLED_APPS.<br />В списке снача идут приложения по умолчанию, затем сторонние приложения, затем созданные нами.<br />Нужно добавить новый элемент в конец этого списка - строку с названием приложения news, которое совпадает с названием директории.<br />Это позволит Django обнаружить созданное приложение news.</p>
+				<p style="text-align: justify;">7) Создадим новое приложение accounts - профили пользователей и всё, что с ними связано:</p>
+				<pre>
+python manage.py startapp accounts
+				</pre>
+				<p style="text-align: justify;">Добавим accounts в установленные приложения в настройках проекта в файл NewsPaper/settings.py в конец списка INSTALLED_APPS.</p>
+				<p style="text-align: justify;">8) Чтобы создать сущности (таблицы) для базы данных, нужно подготовленный скрипт (код) для моделей (классов) и их полей вставить в приложение news в файл models.py.</p>
+				<pre>
+---начало скрипта (см. выше весь код):
+from django.db import models # импорт скрипта models из модуля django.db
+from django.contrib.auth.models import User # импорт скрипта пользователя
+from django.db.models import Sum # импорт функции Sum
+
+class Author(models.Model): # наследуемся от класса Model, определяющего основные функции работы с моделью...
+...
+---конец скрипта
+				</pre>
+				<p style="text-align: justify;">9) И далее указать Django перевести с помощью миграций этот код на язык, понятный базе данных.<br />В терминале в той папке, где лежит manage.py (этот файл не изменяем!) выполнить две команды.</p>
+				<p style="text-align: justify;">9.1) для создания миграций - своеобразный чек-лист/ список изменений, которые мы вносим в файл models.py:</p>
+				<pre>
+python manage.py makemigrations
+				</pre>
+				<p style="text-align: justify;">9.2) для применения миграций:</p>
+				<pre>
+python manage.py migrate
+				</pre>
+				<p style="text-align: justify;">Так мы подготовим базу данных и наши модели теперь будут встроены в БД проекта.</p>
+				<p style="text-align: justify;">Важно: Если в файл models.py внесены корректировки после применения миграций, то следует опять выполнить команды:</p>
+				<pre>
+python manage.py makemigrations
+
+python manage.py migrate
+				</pre>
+				<p style="text-align: justify;"><em>Примечание</em>: При выполнении команды python manage.py makemigrations в Django, существующие строки в затронутых таблицах базы данных не должны пропадать.<br />Команда makemigrations создает файлы миграции, которые описывают изменения в моделях Django. Эти файлы миграции содержат инструкции о том, как изменить схему базы данных, чтобы соответствовать изменениям в моделях.<br />Выполнение миграций может привести к изменению структуры базы данных и, в некоторых случаях, может потребоваться удаление или изменение существующих данных. Например, если добавляется новое поле в модель и создается миграция, Django может потребовать заполнить это поле для существующих записей в таблице.<br />Поэтому, перед выполнением миграций, особенно если они вносят значительные изменения в схему базы данных, рекомендуется создать резервную копию базы данных.</p>
+				<p style="text-align: justify;">10) РАБОТА В КОНСОЛИ DJANGO SHELL с целью создания объектов моделей.</p>
+				<p style="text-align: justify;"><strong>1-ый способ создания объектов:</strong>&nbsp;создание объекта класса с последующим сохранением в базу данных. Пример:</p>
+				<pre>
+article1 = Post(postAuthor = author1, post_type = 'A', postTitle = 'Статья 1', postText = 'Текст 1. Текст текст текст.')
+article1.save()
+				</pre>
+				<p style="text-align: justify;"><strong>2-ой способ создания объектов:</strong> применение менеджера модели - позволяет одновременно создать объект и отправить его в базу данных:</p>
+				<pre>
+article1 = Post.objects.create(postAuthor = author1, post_type = 'A', postTitle = 'Статья 1', postText = 'Текст 1. Текст текст текст.')
+				</pre>
+				<p style="text-align: justify;"><strong><span style="background-color: #ccffcc;">Чтобы запустить Django Shell из терминала</span>, необходимо:</strong></p>
+				<p style="text-align: justify;">1) Активировать/ войти в виртуальное окружение:на Windows: venv\scripts\activateна Linux: source venv/bin/activate&nbsp;<br />2) Перейти в директорию NewsPaper, где находится файл manage.py.cd NewsPaper<br />3) Запустить Django Shell:python manage.py shell<br />4) Появится Python-консоль<br />4.1) Для начала мы должны импортировать модели (ведь они находятся в отдельном модуле-приложении news): from news.models import * или так: from news.models import Author, Category, Post, PostCategory, Comment<br />4.2) Затем уже можем выполнить команды, которые заданы в D2.7.</p>
+			</div>
+
+			<div id="s5" class="gray-block">
+				<h4>Загрузка и получение данных из моделей</h4>
+				<p style="text-align: center;"><strong>ЧТО НУЖНО СДЕЛАТЬ:</strong></p>
+				<p style="text-align: justify;">В качестве результата задания <strong>подготовить файл, в котором написать список всех команд, запускаемых в Django shell:</strong></p>
+				<p style="text-align: justify;">1) Создать двух пользователей (с помощью метода User.objects.create_user).</p>
+				<pre>
+user1 = User.objects.create_user(username = 'User-1', first_name='Adam', email = 'user1@mail.com', password = 'user1-user1')
+user2 = User.objects.create_user(username = 'User-2', first_name='Eva', email = 'user2@mail.com', password = 'user2-user2')
+				</pre>
+				<p style="text-align: justify;">2) Создать два объекта модели Author, связанные с пользователями.&nbsp;</p>
+				<pre>
+author1 = Author.objects.create(authorUser = user1)
+author2 = Author.objects.create(authorUser = user2)
+				</pre>
+				<p style="text-align: justify;">3) Добавить 4 категории в модель Category.</p>
+				<pre>
+category1 = Category.objects.create(categoryName = 'Business and Economics')
+category2 = Category.objects.create(categoryName = 'Science and Technology')
+category3 = Category.objects.create(categoryName = 'Education and Vacancies')
+category4 = Category.objects.create(categoryName = 'Lifestyle and Health')
+				</pre>
+				<p style="text-align: justify;">4) Добавить 2 статьи и 1 новость.</p>
+				<p style="text-align: justify;">4.1) Cоздание текстов статей/ новостей:<br /> <em>Примечание</em>:<br /> В поле postText можно вставлять обычный текст или текст, отформатированный с помощью тегов HTML, в зависимости от ваших потребностей.<br /> Django не ограничивает в этом отношении.<br /> Если вы хотите вставить текст с тегами HTML, убедитесь, что правильно закодированы специальные символы, например, такие как &lt;, &gt;, &amp;, чтобы они отображались корректно в HTML.<br /> <br /> <strong>Для выполняемого задания создадим и вставим текст, отформатированный с помощью тегов HTML. </strong></p>
+				<pre>
+text_article1 = """< p style="text-align: justify;" >В мире информационных технологий постоянно появляются новые языки программирования, 
+и выбрать тот, который будет наиболее полезным и востребованным в ближайшие годы, может быть сложной задачей.< / p >"""
+
+text_article2 = """< p style="text-align: justify;" >< strong >Здоровый образ жизни< / strong > - это не просто отсутствие болезней, 
+это состояние, когда наш организм функционирует на максимальной эффективности, обеспечивая нам удовлетворение от жизни 
+и умение наслаждаться каждым днем. В этом контексте, привычки играют ключевую роль. 
+Они помогают нам поддерживать поддерживать здоровье и энергию на протяжении всей жизни.< / p >"""
+    
+text_news1 = """< p style="text-align: justify;" >< strong >В октябре 2023 года< / strong > информационные технологии 
+продолжают играть ключевую роль в обучении и экономике. 
+С появлением новых инноваций и тенденций, мы видим, как эти технологии влияют на нашу жизнь и работу всё больше.< / p >"""
+				</pre>
+				<p style="text-align: justify;"><strong>Начиная со следующего пункта, будут приведены возможные варианты команд для Django Shell. </strong></p>
+				<p style="text-align: justify;">4.2) Cоздание двух статей:</p>
+				<pre>
+article1 = Post.objects.create(postAuthor = author1, post_type = Post.article, postTitle = 'Статья 1. Автор 1. Какой язык программирования изучать в 2023 году', postText = text_article1)
+article2 = Post.objects.create(postAuthor = author2, post_type = Post.article, postTitle = 'Статья 2. Автор 2. Пять самых важных привычек для здорового образа жизни', postText = text_article2)
+
+либо так:
+article1 = Post.objects.create(postAuthor = author1, post_type = 'A', postTitle = 'Статья 1. Автор 1. Какой язык программирования изучать в 2023 году', postText = text_article1)
+article2 = Post.objects.create(postAuthor = author2, post_type = 'A', postTitle = 'Статья 2. Автор 2. Пять самых важных привычек для здорового образа жизни', postText = text_article2)
+
+либо так:
+article1 = Post.objects.create(postAuthor = Author.objects.get(authorUser = User.objects.get(username = 'User-1')), post_type = 'A', postTitle = 'Статья 1. Автор 1. Какой язык программирования изучать в 2023 году', postText = text_article1)
+article2 = Post.objects.create(postAuthor = Author.objects.get(authorUser = User.objects.get(username = 'User-2')), post_type = 'A', postTitle = 'Статья 2. Автор 2. Пять самых важных привычек для здорового образа жизни', postText = text_article2)
+				</pre>
+				<p style="text-align: justify;">4.3) Cоздание одной новости:</p>
+				<pre>
+news1 = Post.objects.create(postAuthor = author1, post_type = Post.news, postTitle = 'Новость 1. Автор 1. Информационные технологии преобразуют обучение и экономику в 2023 году', postText = text_news1)
+
+либо так:
+news1 = Post.objects.create(postAuthor = author1, post_type = 'N', postTitle = 'Новость 1. Автор 1. Информационные технологии преобразуют обучение и экономику в 2023 году', postText = text_news1)
+
+либо так:
+Post.objects.create(postAuthor = Author.objects.get(authorUser = User.objects.get(username = 'User-1')), post_type = 'N', postTitle = 'Новость 1. Автор 1. Информационные технологии преобразуют обучение и экономику в 2023 году', postText = text_news1)
+				</pre>
+				<p style="text-align: justify;">5) Присвоить им категории (как минимум в одной статье/новости должно быть не меньше 2 категорий).</p>
+				<p style="text-align: justify;">Вариант 1:</p>
+				<pre>
+PostCategory.objects.create(fromPost = article1, fromCategory = category2)
+PostCategory.objects.create(fromPost = article1, fromCategory = category3)
+PostCategory.objects.create(fromPost = article2, fromCategory = category4)
+PostCategory.objects.create(fromPost = news1, fromCategory = category1)
+PostCategory.objects.create(fromPost = news1, fromCategory = category2)
+PostCategory.objects.create(fromPost = news1, fromCategory = category3)
+				</pre>
+				<p style="text-align: justify;">Или вариант 2 с помощью id:</p>
+				<p style="text-align: justify;"><em>Примечание</em>: В базах данных нумерация обычно начинается с 1. Это означает, что первая запись в таблице будет иметь идентификатор (id) равный 1, вторая запись - id равный 2 и т.д. Однако, в некоторых случаях, можно настроить базу данных таким образом, чтобы нумерация начиналась с 0. Это зависит от конкретной системы управления базами данных (СУБД) и ее настроек. В Django, по умолчанию, нумерация идентификаторов в базе данных начинается с 1.</p>
+				<pre>
+Post.objects.get(id=1).postCats.add(Category.objects.get(id=2))
+Post.objects.get(id=1).postCats.add(Category.objects.get(id=3))
+Post.objects.get(id=2).postCats.add(Category.objects.get(id=4))
+Post.objects.get(id=3).postCats.add(Category.objects.get(id=1))
+Post.objects.get(id=3).postCats.add(Category.objects.get(id=2))
+Post.objects.get(id=3).postCats.add(Category.objects.get(id=3))
+				</pre>
+				<p style="text-align: justify;">6) Создать как минимум 4 комментария к разным объектам модели Post (в каждом объекте должен быть как минимум один комментарий).</p>
+				<pre>
+comment1 = Comment.objects.create(commentForPost = article1, commentUser = User.objects.get(username = 'User-2'), commentText = "Комментарий 1. К статье 1 автора 1 - 1-ый коммент. Автор коммента: пользователь 2 = автор 2. Отличный текст!")
+comment2 = Comment.objects.create(commentForPost = article2, commentUser = User.objects.get(username = 'User-1'), commentText = "Комментарий 2. К статье 2 автора 2 - 1-ый коммент. Автор коммента: пользователь 1 = автор 1. Вопрос автору.")
+comment3 = Comment.objects.create(commentForPost = article2, commentUser = User.objects.get(username = 'User-2'), commentText = "Комментарий 3. К статье 2 автора 2 - 2-ой коммент. Автор коммента: пользователь 2 = автор 2. Ответ автора.")
+comment4 = Comment.objects.create(commentForPost = news1, commentUser = User.objects.get(username = 'User-2'), commentText = "Комментарий 4. К новости 1 автора 1 - 1-ый коммент. Автор коммента: пользователь 2 = автор 2. Текст мог быть получше.")
+				</pre>
+				<p style="text-align: justify;">7) Применяя функции like() и dislike() к статьям/новостям и комментариям, скорректировать рейтинги этих объектов.</p>
+				<p style="text-align: justify;">Вариант 1:</p>
+				<pre>
+article1.like()
+article1.save()
+comment1.like()
+comment1.save()
+Post.objects.get(postTitle = 'Статья 1. Автор 1. Какой язык программирования изучать в 2023 году').postRating
+Comment.objects.get(commentForPost = article1).commentRating
+				</pre>
+				<p style="text-align: justify;">Добавим лайки/ дислайки ещё с помощью варианта 2:</p>
+				<pre>
+Post.objects.get(id=1).like() # лайк статьи 1 автора 1
+Post.objects.get(id=1).like()
+Post.objects.get(id=1).like()
+Post.objects.get(id=1).like()
+Post.objects.get(id=1).postRating
+5
+Post.objects.get(id=2).like() # лайк статьи 2 автора 2
+Post.objects.get(id=2).like()
+Post.objects.get(id=2).like()
+Post.objects.get(id=2).dislike() # дислайк статьи 2 автора 2
+Post.objects.get(id=2).postRating
+2
+Post.objects.get(id=3).like() # лайк новости 1 автора 1
+Post.objects.get(id=3).dislike() # дислайк новости 1 автора 1
+Post.objects.get(id=3).dislike()
+Post.objects.get(id=3).postRating
+-1
+
+# Лайк коммента №1. К статье 1 автора 1 - 1-ый коммент. Автор коммента: пользователь 2 = автор 2.
+Comment.objects.get(id=1).like() 
+Comment.objects.get(id=1).like()
+Comment.objects.get(id=1).like()
+Comment.objects.get(id=1).commentRating
+4
+
+# Лайк коммента №2. К статье 2 автора 2 - 1-ый коммент. Автор коммента: пользователь 1 = автор 1.
+Comment.objects.get(id=2).like()
+Comment.objects.get(id=2).commentRating
+1
+
+# Лайк коммента №3. К статье 2 автора 2 - 2-ой коммент. Автор коммента: пользователь 2 = автор 2.
+Comment.objects.get(id=3).like()
+Comment.objects.get(id=3).like()
+Comment.objects.get(id=3).like()
+Comment.objects.get(id=3).like()
+Comment.objects.get(id=3).like()
+Comment.objects.get(id=3).dislike()
+Comment.objects.get(id=3).commentRating
+4
+
+# Лайк коммента №4. К новости 1 автора 1 - 1-ый коммент. Автор коммента: пользователь 2 = автор 2.
+Comment.objects.get(id=4).like() 
+Comment.objects.get(id=4).dislike()
+Comment.objects.get(id=4).dislike()
+Comment.objects.get(id=4).commentRating
+-1
+				</pre>
+				<p style="text-align: justify;">Можно ещё использовать вариант 3 - рандомные лайки/ дислайки:</p>
+				<pre>
+# для проставления лайков/ дислайков
+import random
+
+# список всех объектов, которые можно лайкать
+list_for_like = [article1,
+                article2,
+                news1,
+                comment1,
+                comment2,
+                comment3,
+                comment4]
+
+# 50 рандомных лайков/ дислайков
+for i in range(50):
+    random_post = random.choice(list_for_like)
+    if i % 3:
+        random_post.dislike() # кратные 3
+    else:
+        random_post.like() # не кратные 3
+				</pre>
+				<p style="text-align: justify;">8) Обновить рейтинги пользователей.</p>
+				<p style="text-align: justify;">вариант 1:</p>
+				<pre>
+Author.objects.get(id=1).update_rating() # подсчет и обновление рейтинга автора 1
+Author.objects.get(id=2).update_rating() # подсчет и обновление рейтинга автора 2
+				</pre>
+				<p style="text-align: justify;">или вариант 2:</p>
+				<pre>
+Author.objects.get(authorUser=User.objects.get(username='User-1')).update_rating()
+Author.objects.get(authorUser=User.objects.get(username='User-2')).update_rating()
+				</pre>
+				<p style="text-align: justify;">Получить рейтинги пользователей.</p>
+				<pre>
+Author.objects.get(id=1).authorRating
+или так:
+a1 = Author.objects.get(authorUser=User.objects.get(username='User-1'))
+a1.authorRating
+16
+				</pre>
+				<p style="text-align: justify;">Как образовался рейтинг для User-1: (5*3 + (-1)*3) + 1 + (4-1) = (15 -3) + 1 + 3 = 16</p>
+				<pre>
+Author.objects.get(id=2).authorRating
+или так:
+a2 = Author.objects.get(authorUser=User.objects.get(username='User-2'))
+a2.authorRating
+18
+				</pre>
+				<p style="text-align: justify;">Как образовался рейтинг для User-2: 2*3 + (4 + 4 +-1) + (1 + 4) = 6 + 7 + 5 = 18</p>
+				<p style="text-align: justify;">9) Вывести username и рейтинг лучшего пользователя (применяя сортировку и возвращая поля первого объекта).<br />Лучший автор - вариант 1:</p>
+				<pre>
+best_author = Author.objects.all().order_by('-authorRating')[0]
+
+print('Username лучшего автора:', best_author.authorUser.username, 'рейтинг:', best_author.authorRating)
+ответ:
+Username лучшего автора: User-2 рейтинг: 18
+				</pre>
+				<p style="text-align: justify;">Лучший автор - вариант 2:</p>
+				<pre>
+best_author_2 = Author.objects.order_by('-authorRating').first()
+
+print('Username лучшего автора:', best_author_2.authorUser.username, 'рейтинг:', best_author_2.authorRating)
+ответ:
+Username лучшего автора: User-2 рейтинг: 18
+				</pre>
+				<p style="text-align: justify;">Или вариант 3, но не очень красиво в ответе:</p>
+				<pre>
+best_author_3 = Author.objects.all().order_by('-authorRating').values('authorUser', 'authorRating')[0]
+
+print('Лучший автор (username, рейтинг):', best_author_3)
+ответ:
+Лучший автор (username, рейтинг): {'authorUser': 2, 'authorRating': 18}
+				</pre>
+				<p style="text-align: justify;">10) Вывести дату добавления, username автора, рейтинг, заголовок и превью лучшей статьи, основываясь на лайках/дислайках к этой статье.</p>
+				<p style="text-align: justify;">Лучшая статья - вариант 1:</p>
+				<pre>
+best_article = Post.objects.filter(post_type = Post.article).order_by('-postRating')[0]
+
+print('Лучшая статья на основании лайков и дислайков к этой статье:')
+ответ:
+Лучшая статья на основании лайков и дислайков к этой статье:
+
+print('Дата создания:', best_article.postCreated)
+ответ:
+Дата создания: 2023-10-13 21:47:22.027126+00:00
+
+print('Username автора:', best_article.postAuthor.authorUser.username)
+ответ:
+Username автора: User-1
+
+print('Рейтинг статьи:', best_article.postRating)
+ответ:
+Рейтинг статьи: 5
+
+print('Заголовок статьи:', best_article.postTitle)
+ответ:
+Заголовок статьи: Статья 1. Автор 1. Какой язык программирования изучать в 2023 году
+
+print('Превью:', best_article.preview())
+
+ответ (без использования функции удаления тегов в методе preview()):
+Превью: < p style="text-align: justify;" >В мире информационных технологий постоянно появляются новые языки программирования, и выбрат...
+
+ответ (с использованием функции strip_tags для удаления тегов в методе preview()):
+Превью: В мире информационных технологий постоянно появляются новые языки программирования, и выбрать тот, который будет наиболее по...
+				</pre>
+				<p style="text-align: justify;">Лучшая статья - более красивый вариант 2:</p>
+				<pre>
+best_article_2 = Post.objects.filter(post_type = 'A').order_by('-postRating').first()
+
+print('Лучшая статья добавлена:', best_article_2.postCreated, '\nUsername автора:', best_article_2.postAuthor.authorUser.username,
+'\nРейтинг статьи:', best_article_2.postRating, '\nЗаголовок статьи:', best_article_2.postTitle, '\nПревью:', best_article_2.preview())
+
+ответ:
+Лучшая статья добавлена: 2023-10-13 21:47:22.027126+00:00
+Username автора: User-1
+Рейтинг статьи: 5
+Заголовок статьи: Статья 1. Автор 1. Какой язык программирования изучать в 2023 году
+Превью: В мире информационных технологий постоянно появляются новые языки программирования, и выбрать тот, который будет наиболее по...
+				</pre>
+				<p style="text-align: justify;">11) Вывести все комментарии (дата, пользователь, рейтинг, текст) к этой статье.</p>
+				<p style="text-align: justify;">Комментариев может быть несколько, поэтому нужен универсальный код. <br />Делаем цикл - печать комментариев к лучшей статье.</p>
+				<p style="text-align: justify;">Вариант 1:</p>
+				<pre>
+for best_article_comment in Comment.objects.filter(commentForPost = best_article):
+    print('Комментарии к лучшей статье:')
+    print('Дата комментария:', comment.commentCreated)
+    print('Автор комментария:', comment.commentUser.username)
+    print('Рейтинг комментария:', comment.commentRating)
+    print('Текст комментария:', comment.commentText)
+    print('')
+				</pre>
+				<p style="text-align: justify;">Вариант 2:</p>
+				<pre>
+for best_article_comment in Comment.objects.filter(commentForPost = best_article):
+    print('Комментарии к лучшей статье:', '\nДата комментария:', best_article_comment.commentCreated, '\nАвтор комментария:', best_article_comment.commentUser.username, 
+'\nРейтинг комментария:', best_article_comment.commentRating, '\nТекст комментария:', best_article_comment.commentText, '\n ')
+
+ответ:
+Комментарии к лучшей статье:
+Дата комментария: 2023-10-13 22:05:57.178720+00:00
+Автор комментария: User-2
+Рейтинг комментария: 4
+Текст комментария: Комментарий 1. К статье 1 автора 1 - 1-ый коммент. Автор коммента: пользователь 2 = автор 2. Отличный текст!
+				</pre>
+				<p style="text-align: justify;">12) Выходим из Django Shell</p>
+				<pre>
+exit()
+				</pre>
+			</div>
+			
+			<div id="s6" class="thanks-block" style="text-align: justify;"><p>Если представленная работа Вам<br />
+			<ul>
+			<li style="text-align: justify;">понравилась,</li>
+			<li style="text-align: justify;">принесла пользу,</li>
+			<li style="text-align: justify;">сэкономила время,</li>
+			</ul>
+			то Вы можете поддержать автора, воспользовавшись различными платежными системами.</p></div>
+			
+			<div class="block-ym-payment">
+				<a href="https://yoomoney.ru/to/4100117804016773" class="custom-btn custom-btn-ym" target="_blank">Поддержать автора через ЮMoney</a>
+			</div>
+			<div class="block-qiwi-payment">
+				<a href="https://qiwi.com/n/VICTORINCA" class="custom-btn custom-btn-qiwi" target="_blank">Выразить признательность через Qiwi</a>
+			</div>
+			<div class="block-wm-payment">
+				<a href="https://donate.webmoney.com/w/MmKxolmn8LgqxXjZ9azFqd" class="custom-btn custom-btn-wm" target="_blank">Поблагодарить автора через WebMoney</a>
+			</div>
+			<div class="block-pf-payment">
+				<form action="https://perfectmoney.com/api/step1.asp" method="POST">
+					<input type="hidden" name="PAYEE_ACCOUNT" value="U35741354">
+					<input type="hidden" name="PAYEE_NAME" value="Victorinca">
+					<input type="hidden" name="PAYMENT_ID" value="github.com-Donate-for-Victorinca-sf-d2">
+					<label for="myInput">Enter any amount:</label>
+					<input type="text" name="PAYMENT_AMOUNT" value="1" style="text-align: center; font-size: 100%; max-width: 56px; min-height: 36px; margin: 4px 8px; border: 2px red solid; border-radius: 5px;">USD
+					<input type="hidden" name="PAYMENT_UNITS" value="USD">
+					<input type="hidden" name="STATUS_URL" value="mailto:victoriavladimirskaya@gmail.com">
+					<input type="hidden" name="PAYMENT_URL" value="https://github.com/Victorinca/Skillfactory-Module-D-Theme-D2">
+					<input type="hidden" name="PAYMENT_URL_METHOD" value="LINK">
+					<input type="hidden" name="NOPAYMENT_URL" value="https://victorinca.github.io/Skillfactory-Module-D-Theme-D2/">
+					<input type="hidden" name="NOPAYMENT_URL_METHOD" value="LINK">
+					<input type="hidden" name="SUGGESTED_MEMO" value="">
+					<input type="hidden" name="BAGGAGE_FIELDS" value="">
+					<input class="custom-btn custom-btn-pf" type="submit" name="PAYMENT_METHOD" value="Donate via Perfect Money">
+				</form>
+			</div>
+			<div class="thanks-block" style="text-align: justify;">
+				<p style="text-align: center;"><strong>Благодарю Вас за щедрость!</strong></p>
+				<p style="text-align: center;"><strong>Ваша поддержка и признательность очень приятны и важны!</strong></p>
+			</div>
+			<div id="s7" class="gray-block">
+				<p style="text-align: justify;"><strong>Созданное приложение вместе с файлом с командами необходимо загрузить в&nbsp;<em>git-</em>репозиторий.</strong></p>
+			</div>
+			<div class="block-sf">
+				<a href="https://github.com/Victorinca/Skillfactory-Module-D-Theme-D2" class="custom-btn custom-btn-sf" target="_blank">Посмотреть файлы приложения</a>
+			</div>
+			
+		</div>
+	</div>
+	<div id="sticky-block">
+		<a href="#top">/\</a>
+	</div>
+	<div class="footer">
+		<p>Автор вёрстки и разработки, а также исполнитель задания: © Владимирская Виктория, СПб, 2023.</p>
+	</div>
+</body>
+</html>
