@@ -5,7 +5,7 @@ Completed homework for Skillfactory Course: 'Python Web Developer'. Module D - '
 ## Репозиторий учебного проекта NewsPaper для курсов "Веб-разработчик на Python" и "Fullstack-разработчик на Python"
 ### [Модуль D. Тема D2 "Модели"](https://victorinca.github.io/Skillfactory-Module-D-Theme-D2/)
 
-Приложение новостного портала NewsPaper, созданное с помощью Python and Django, чтобы можно было: 1) смотреть новости 2) читать статьи.
+Приложение новостного портала NewsPaper, созданное с помощью Python и Django, чтобы можно было: 1) смотреть новости 2) читать статьи.
 
 Итоговое задание по теме D2 "Модели" заключается в создании каркаса и базы этого приложения (пока что только моделей).
 
@@ -28,6 +28,6 @@ Completed homework for Skillfactory Course: 'Python Web Developer'. Module D - '
 ## Ссылки
 
 - [Ссылка на сайт](https://victorinca.github.io/Skillfactory-Module-D-Theme-D2/)
-- [Ссылка на GitHub](https://github.com/Victorinca/Skillfactory-Module-D-Theme-D2/edit/main/README.md)
+- [Ссылка на GitHub](https://github.com/Victorinca/Skillfactory-Module-D-Theme-D2)
 
 По всем вопросам, которые касаются выполненного задания, можно писать на почту victoriavladimirskaya@gmail.com.
