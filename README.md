@@ -25,9 +25,18 @@ Completed homework for Skillfactory Course: 'Python Web Developer'. Module D - '
 #### В качестве результата задания подготовлен файл command_for_django shell.txt, где написан список всех команд, запускаемых в Django Shell.
 Файл [command_for_django shell.txt](https://github.com/Victorinca/Skillfactory-Module-D-Theme-D2/blob/main/command_for_django%20shell.txt) содержится в корневой директории.
 
+## Поддержать, отблагодарить автора
+Если представленная работа Вам понравилась, принесла пользу, сэкономила время, то Вы можете поддержать автора, воспользовавшись различными платежными системами.
+- [Поддержать автора через ЮMoney](https://yoomoney.ru/to/4100117804016773)
+- [Выразить признательность через Qiwi](https://qiwi.com/n/VICTORINCA)
+- [Поблагодарить автора через WebMoney](https://donate.webmoney.com/w/MmKxolmn8LgqxXjZ9azFqd)
+#### Благодарю Вас за щедрость!
+#### Ваша поддержка и признательность очень приятны и важны!
+
 ## Ссылки
 
-- [Ссылка на сайт](https://victorinca.github.io/Skillfactory-Module-D-Theme-D2/)
+- [Ссылка на сайт проекта](https://victorinca.github.io/Skillfactory-Module-D-Theme-D2/)
 - [Ссылка на GitHub](https://github.com/Victorinca/Skillfactory-Module-D-Theme-D2)
+  
 
 По всем вопросам, которые касаются выполненного задания, можно писать на почту victoriavladimirskaya@gmail.com.
